@@ -34,7 +34,6 @@ flask_cors.CORS(app)
 # [START note]
 class Note(ndb.Model):
     """NDB model class for a user's note.
-
     Key is user id from decrypted token.
     """
     friendly_id = ndb.StringProperty()
@@ -46,7 +45,6 @@ class Note(ndb.Model):
 # [START query_database]
 def query_database(user_id):
     """Fetches all notes associated with user_id.
-
     Notes are ordered them by date created, with most recent note added
     first.
     """
@@ -82,7 +80,7 @@ def list_notes():
     # [END verify_token]
 
     notes = query_database(claims['sub'])
-
+    print(notes)
     return jsonify(notes)
 # [END list_notes]
 
@@ -92,12 +90,11 @@ def list_notes():
 def add_note():
     """
     Adds a note to the user's notebook. The request should be in this format:
-
         {
             "message": "note message."
         }
     """
-
+    print('dadd')
     # Verify Firebase auth.
     id_token = request.headers['Authorization'].split(' ').pop()
     claims = google.oauth2.id_token.verify_firebase_token(
@@ -120,7 +117,7 @@ def add_note():
 
     # Stores note in database.
     note.put()
-
+    print(note.message)
     return 'OK', 200
 # [END add_note]
 

@@ -133,12 +133,14 @@ $(function(){
 
 
     var fileName = $('#file-input').val();
+
     var hub = $('#hub').val();
 
     $('#file-input').val("");
 
     /* Send note data to backend, storing in database with existing data
     associated with userIdToken */
+
     $.ajax(backendHostUrl + '/notes', {
       headers: {
         'Authorization': 'Bearer ' + userIdToken
@@ -149,6 +151,7 @@ $(function(){
     }).then(function(){
       // Refresh notebook display.
       fetchNotes();
+
     });
 
   });
