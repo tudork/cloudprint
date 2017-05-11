@@ -59,7 +59,9 @@ def query_database(user_id):
     for note in notes:
         note_messages.append({
             'friendly_id': note.friendly_id,
-            'message': note.message,
+            'filename': note.filename,
+            'hub': note.hub,
+            'status': note.status,
             'created': note.created
         })
 
@@ -88,7 +90,7 @@ def list_notes():
 
 
 # [START add_note]
-@app.route('/notes', methods=['POST', 'PUT'])
+@app.route('/orders', methods=['POST', 'PUT'])
 def add_note():
     """
     Adds a note to the user's notebook. The request should be in this format:
@@ -112,7 +114,9 @@ def add_note():
     # with the user ID as the key name.
     note = Note(
         parent=ndb.Key(Note, claims['sub']),
-        message=data['message'])
+        filename=data['filename'],
+        hub=data['hub'],
+        status='waiting')
 
     # Some providers do not provide one of these so either can be used.
     note.friendly_id = claims.get('name', claims.get('email', 'Unknown'))
