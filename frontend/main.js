@@ -17,17 +17,17 @@ $(function(){
   // deploying the application to a live production environment, change to
   // https://backend-dot-<PROJECT_ID>.appspot.com as specified in the
   // backend's app.yaml file.
-  var backendHostUrl = 'https://backend-dot-cloudprint-167301.appspot.com.';
+  var backendHostUrl = 'https://backend-dot-fire-b664b.appspot.com.';
 
   // Initialize Firebase
   // TODO: Replace with your project's customized code snippet
-  var config = {
-    apiKey: "AIzaSyAAEb1GNPKId9M299pWE1cQx2xqAqzVwU4",
-    authDomain: "cloudprint-167301.firebaseapp.com",
-    databaseURL: "https://cloudprint-167301.firebaseio.com",
-    projectId: "cloudprint-167301",
-    storageBucket: "cloudprint-167301.appspot.com",
-    messagingSenderId: "441817199881"
+ var config = {
+    apiKey: "AIzaSyAffzwHuOrwMjmAp9XShcV3KRJV7Z0SUe8",
+    authDomain: "fire-b664b.firebaseapp.com",
+    databaseURL: "https://fire-b664b.firebaseio.com",
+    projectId: "fire-b664b",
+    storageBucket: "fire-b664b.appspot.com",
+    messagingSenderId: "292570722112"
   };
 
   // This is passed into the backend to authenticate the user.

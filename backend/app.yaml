@@ -9,4 +9,4 @@ handlers:
 
 env_variables:
   # Replace with your Firebase project ID.
-  FIREBASE_PROJECT_ID: 'cloudprint-167301'
+  FIREBASE_PROJECT_ID: 'fire-b664b'
